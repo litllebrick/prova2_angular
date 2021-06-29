@@ -1,0 +1,23 @@
+<button [routerLink]="'/lista/fatura'">Lista</button>
+<h1>Fatura</h1>
+
+<form #faturaForm (submit)="save(faturaForm)">
+  <div>
+    <label for="amount">Valor Gasto:</label>
+    <input type="number" name="amount" id="amount" #amount [(ngModel)]="newFatura.amount">
+  </div>
+  <div>
+    <label for="product">Produto</label>
+    <input type="text" name="product" id="product" #product [(ngModel)]="newFatura.product">
+  </div>
+  <div>
+    <label for="paymentMethod">Método de Pagamento:</label>
+    <input type="text" name="paymentMethod" id="paymentMethod" #paymentMethod [(ngModel)]="newFatura.paymentMethod">
+  </div>
+  <div>
+    <label for="customer">Nome do Gastador:</label>
+    <input type="text" name="customer" id="customer" #customer [(ngModel)]="newFatura.customer">
+  </div>
+
+  <input type="submit" value="Salvar">
+</form>

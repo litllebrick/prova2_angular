@@ -1,0 +1,21 @@
+<button [routerLink]="'/cadastro/fatura'">Cadastro</button>
+<h2>Faturas</h2>
+
+Nome do Cliente: <input (keyup)="getCustomer($event)">
+
+<table style="width:100%">
+    <tr>
+        <th>Customer</th>
+        <th>Amount</th>
+        <th>Product</th>
+        <th>Payment Method</th> 
+        <th>Opções</th> 
+    </tr>
+    <tr *ngFor="let fatura of faturas">
+        <td>{{fatura.customer}}</td>
+        <td>{{fatura.amount}}</td>
+        <td>{{fatura.product}}</td>
+        <td>{{fatura.paymentMethod}}</td>
+        <td><input type="button" value="Remover" (click)="deleteFatura(fatura.id)"></td>
+    </tr>
+</table>
